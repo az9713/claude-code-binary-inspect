@@ -44,10 +44,16 @@ That gives technical readers a practical way to answer questions like:
 ```text
 README.md
 CLAUDE_CODE_BINARY_INSPECTION_WORKFLOW.md
+USEFUL_INFO_FROM_EXTRACTED_CLAUDE_JS.md
 artifacts/
   prompts-generated-2.1.150.json
+bucket-reports/
+  README.md
+  01-startup-and-network-behavior.md
+  ...
 scripts/
   extract-claude-code-js.ps1
+  generate-bucket-reports.cjs
   scan-claude-code-js.ps1
 ```
 
@@ -58,6 +64,10 @@ workflow.
 
 The `scripts/` directory contains the reproducible PowerShell workflow used
 during the investigation.
+
+`bucket-reports/` contains one current-version markdown report per inspection
+bucket. Each report is generated from the current Claude Code native binary
+package and includes the resolved Claude binary version.
 
 Large generated files are intentionally ignored:
 
@@ -223,6 +233,15 @@ Finding code paths and strings confirms that the extracted code contains those
 mechanisms. It does not, by itself, prove every runtime behavior in every
 configuration. Runtime behavior depends on authentication state, provider mode,
 environment variables, settings, startup path, and network availability.
+
+## Bucket reports
+
+The current generated bucket reports are in:
+
+- [Claude Code binary inspection bucket reports](./bucket-reports/README.md)
+
+Each bucket report is stamped with the Claude binary version used for
+extraction.
 
 ## Safety and policy
 

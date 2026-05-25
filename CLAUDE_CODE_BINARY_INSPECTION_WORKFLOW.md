@@ -224,11 +224,17 @@ This folder now contains:
 ```text
 reddit_text.txt
 CLAUDE_CODE_BINARY_INSPECTION_WORKFLOW.md
+USEFUL_INFO_FROM_EXTRACTED_CLAUDE_JS.md
 scripts/
   extract-claude-code-js.ps1
+  generate-bucket-reports.cjs
   scan-claude-code-js.ps1
 artifacts/
   prompts-generated-2.1.150.json
+bucket-reports/
+  README.md
+  01-startup-and-network-behavior.md
+  ...
 piebald_repo/
   local clone of Piebald-AI/claude-code-system-prompts
 tweakcc_repo/
@@ -239,6 +245,9 @@ tweakcc_repo/
 artifact from the documented run. Larger generated outputs, such as downloaded
 tarballs, unpacked binaries, and extracted JavaScript, are ignored and can be
 recreated by running the extraction script again.
+
+`bucket-reports/` contains one generated markdown report per inspection bucket.
+Each report includes the Claude binary version it was generated from.
 
 ## Prerequisites
 
