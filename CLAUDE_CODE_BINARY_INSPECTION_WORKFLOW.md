@@ -228,9 +228,6 @@ scripts/
   extract-claude-code-js.ps1
   scan-claude-code-js.ps1
 artifacts/
-  anthropic-ai-claude-code-linux-x64-2.1.150.tgz
-  unpacked-2.1.150/
-  claude-code-2.1.150.js
   prompts-generated-2.1.150.json
 piebald_repo/
   local clone of Piebald-AI/claude-code-system-prompts
@@ -238,8 +235,10 @@ tweakcc_repo/
   local clone of Piebald-AI/tweakcc
 ```
 
-`artifacts/` is generated output. You can delete it and recreate it by running
-the extraction script again.
+`artifacts/prompts-generated-2.1.150.json` is checked in as a compact generated
+artifact from the documented run. Larger generated outputs, such as downloaded
+tarballs, unpacked binaries, and extracted JavaScript, are ignored and can be
+recreated by running the extraction script again.
 
 ## Prerequisites
 

@@ -44,6 +44,8 @@ That gives technical readers a practical way to answer questions like:
 ```text
 README.md
 CLAUDE_CODE_BINARY_INSPECTION_WORKFLOW.md
+artifacts/
+  prompts-generated-2.1.150.json
 scripts/
   extract-claude-code-js.ps1
   scan-claude-code-js.ps1
@@ -57,13 +59,19 @@ workflow.
 The `scripts/` directory contains the reproducible PowerShell workflow used
 during the investigation.
 
-Generated files are intentionally ignored:
+Large generated files are intentionally ignored:
 
 - downloaded npm tarballs
 - unpacked native packages
 - extracted JavaScript files
-- generated prompt JSON
 - local clones of reference repositories
+
+The generated prompt JSON for the documented `2.1.150` run is checked in as a
+small, inspectable artifact:
+
+```text
+artifacts/prompts-generated-2.1.150.json
+```
 
 ## Quick start
 

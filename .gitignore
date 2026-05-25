@@ -1,5 +1,7 @@
 # Generated extraction artifacts
-artifacts/
+artifacts/*
+!artifacts/
+!artifacts/prompts*.json
 npm_packages/
 unpacked/
 *.tgz
