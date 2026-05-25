@@ -1,0 +1,29 @@
+# Generated extraction artifacts
+artifacts/
+npm_packages/
+unpacked/
+*.tgz
+*.tar.gz
+*.zip
+
+# Extracted Claude Code JavaScript and binaries
+claude-code-*.js
+claude
+claude.exe
+
+# Local reference clones
+piebald_repo/
+tweakcc_repo/
+
+# Local notes copied from source pages
+reddit_text.txt
+.ignore/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+
+# Dependencies
+node_modules/
