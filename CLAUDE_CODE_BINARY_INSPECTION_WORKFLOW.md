@@ -1,4 +1,4 @@
-# Claude Code binary unpacking and prompt extraction onboarding
+# Claude Code binary inspection onboarding
 
 This document explains how to inspect the Claude Code executable, extract the
 embedded JavaScript, find prompt-related code paths, and understand how projects
@@ -6,7 +6,8 @@ like `Piebald-AI/claude-code-system-prompts` and `tweakcc` fit together.
 
 It assumes you are technically comfortable with terminals, packages, source
 files, JSON, and basic scripting, but have no prior knowledge of Claude Code's
-packaging, Bun binaries, prompt extraction, or local patching workflow.
+packaging, Bun binaries, binary inspection, prompt extraction, or local patching
+workflow.
 
 The workflow in this folder was verified on Windows PowerShell against Claude
 Code `2.1.150`.
@@ -32,6 +33,11 @@ The practical goal of this workflow is to answer questions like:
 - How are prompt fragments composed at runtime?
 - What does a third-party prompt corpus appear to have extracted?
 - How could local prompt patching tools find and replace the same strings?
+
+System prompts are one important investigation target, but the workflow is more
+general: after extracting the embedded JavaScript, you can inspect endpoints,
+feature flags, environment variables, startup behavior, telemetry gates,
+runtime configuration, and patch points.
 
 This document separates three activities that are often conflated:
 
@@ -217,7 +223,7 @@ This folder now contains:
 
 ```text
 reddit_text.txt
-REPLICATE_CLAUDE_CODE_PROMPT_WORKFLOW.md
+CLAUDE_CODE_BINARY_INSPECTION_WORKFLOW.md
 scripts/
   extract-claude-code-js.ps1
   scan-claude-code-js.ps1
@@ -815,10 +821,13 @@ tools that have filesystem, shell, or repository access.
 
 Think of Claude Code's native executable as a packaged application that contains
 minified JavaScript. `tweakcc unpack` extracts that JavaScript. Once extracted,
-normal code search techniques work. Prompt extraction then scans that JavaScript
-for large prompt-like strings and template literals, producing structured JSON.
-Piebald's system prompt repository converts that structured JSON into readable
-markdown files.
+normal code search techniques work. That binary-inspection layer is broader
+than prompt extraction: you can inspect endpoints, environment variables,
+feature flags, prompt registration, and other runtime behavior. Prompt
+extraction is a specialized next step that scans the JavaScript for large
+prompt-like strings and template literals, producing structured JSON. Piebald's
+system prompt repository converts that structured JSON into readable markdown
+files.
 
 The safest learning path is:
 

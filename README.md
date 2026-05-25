@@ -1,8 +1,9 @@
-# Claude Code system prompt extraction: a discovery workflow
+# Claude Code binary inspect: a discovery workflow
 
 This repository documents a hands-on learning process for inspecting the Claude
 Code executable, extracting its embedded JavaScript, and understanding how
-system prompt extraction and local prompt patching workflows work.
+binary inspection, prompt extraction, feature-flag research, and local patching
+workflows relate to each other.
 
 The exploration was inspired by two public references:
 
@@ -13,7 +14,7 @@ This is an educational reverse-engineering and inspection workflow. It does not
 publish extracted Claude Code source or bundled prompt corpora. The focus is on
 how to reproduce the investigation locally, how to think about the moving
 parts, and how to avoid confusing binary string search, JavaScript extraction,
-prompt extraction, and binary patching.
+prompt extraction, endpoint and feature-flag inspection, and binary patching.
 
 ## Why this exists
 
@@ -42,13 +43,13 @@ That gives technical readers a practical way to answer questions like:
 
 ```text
 README.md
-REPLICATE_CLAUDE_CODE_PROMPT_WORKFLOW.md
+CLAUDE_CODE_BINARY_INSPECTION_WORKFLOW.md
 scripts/
   extract-claude-code-js.ps1
   scan-claude-code-js.ps1
 ```
 
-`REPLICATE_CLAUDE_CODE_PROMPT_WORKFLOW.md` is the detailed onboarding guide. It
+`CLAUDE_CODE_BINARY_INSPECTION_WORKFLOW.md` is the detailed onboarding guide. It
 assumes technical competence but no prior domain knowledge about Claude Code
 binaries, Bun-packed executables, `tweakcc`, prompt fragments, or the Piebald
 workflow.
@@ -167,8 +168,10 @@ npm registry
           -> readable markdown prompt files
 ```
 
-This repository focuses on the learning path through the first four stages.
-The detailed guide explains how to run the raw prompt extractor as a follow-up.
+This repository focuses on the broader binary-inspection learning path through
+the first four stages. System prompt extraction is one follow-up use case. The
+detailed guide explains how to run the raw prompt extractor after extracting
+the JavaScript.
 
 ## Inspecting vs extracting vs patching
 
@@ -228,7 +231,7 @@ This project is not affiliated with Anthropic or Piebald AI.
 
 Start with the detailed guide:
 
-- [Claude Code binary unpacking and prompt extraction onboarding](./REPLICATE_CLAUDE_CODE_PROMPT_WORKFLOW.md)
+- [Claude Code binary inspection onboarding](./CLAUDE_CODE_BINARY_INSPECTION_WORKFLOW.md)
 
 Then compare with the public inspiration sources:
 
